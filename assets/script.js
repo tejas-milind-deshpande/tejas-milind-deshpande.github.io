@@ -1,12 +1,12 @@
 const toggle = document.querySelector('.theme-toggle');
-const saved = localStorage.getItem('tejas-theme');
+const saved = localStorage.getItem('tejas-theme-v2');
 
 if (saved === 'light') document.body.classList.add('light');
 
 toggle?.addEventListener('click', () => {
   document.body.classList.toggle('light');
   const isLight = document.body.classList.contains('light');
-  localStorage.setItem('tejas-theme', isLight ? 'light' : 'dark');
+  localStorage.setItem('tejas-theme-v2', isLight ? 'light' : 'dark');
   toggle.setAttribute('aria-label', isLight ? 'Toggle dark mode' : 'Toggle light mode');
   toggle.textContent = isLight ? '◐' : '☼';
 });
