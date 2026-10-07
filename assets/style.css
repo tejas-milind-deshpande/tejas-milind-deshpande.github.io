@@ -107,3 +107,45 @@ footer{border-top:1px solid var(--line);max-width:var(--max);margin:auto;padding
 @media(max-width:1100px){.insights-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){.insights-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.insight-card{min-height:240px;padding:24px}.insight-card h3{font-size:23px;margin-top:42px}}
+
+
+/* Bootstrap integration */
+.site-header.navbar { padding: 20px 5vw; }
+.site-header .navbar-collapse { flex-grow: 0; }
+.site-header .navbar-toggler { border: 1px solid var(--line); padding: 7px 9px; }
+.site-header .navbar-toggler:focus { box-shadow: 0 0 0 2px rgba(139,124,255,.18); }
+.site-header .navbar-toggler-icon {
+  filter: invert(1) grayscale(1);
+  opacity: .8;
+}
+[data-theme="light"] .site-header .navbar-toggler-icon { filter: invert(0); }
+
+.hero.container-fluid,
+.intro-strip.container-fluid { max-width: none; }
+
+.focus-grid.row,
+.tech-grid.row,
+.insights-grid.row { margin-left: 0; margin-right: 0; }
+
+.focus-grid.row > article { min-width: 0; }
+
+.insights-grid.row > .insight-card { margin: 0; }
+
+@media (min-width: 992px) {
+  .focus-grid.row > article { flex: 1 1 20%; max-width: 20%; }
+  .insights-grid.row > .insight-card { flex: 0 0 calc(33.333% - .75rem); max-width: calc(33.333% - .75rem); }
+}
+
+@media (max-width: 991.98px) {
+  .site-header .navbar-collapse {
+    width: 100%;
+    padding-top: 18px;
+  }
+  .site-header nav a { display: block; padding: 9px 0; }
+  .focus-grid.row > article { flex: 0 0 50%; max-width: 50%; }
+  .insights-grid.row > .insight-card { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (max-width: 575.98px) {
+  .focus-grid.row > article { flex: 0 0 100%; max-width: 100%; }
+}
