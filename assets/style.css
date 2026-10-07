@@ -94,63 +94,61 @@ footer{border-top:1px solid var(--line);max-width:var(--max);margin:auto;padding
 }
 
 
-.insights-grid{--bs-gutter-x:14px;--bs-gutter-y:14px}
-.insight-card{display:flex;flex-direction:column;min-height:280px;padding:30px;background:var(--panel);border:1px solid var(--line);transition:.2s ease}
+.insights-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:14px;
+  align-items:stretch;
+}
+.insight-card{
+  grid-column:span 4;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  min-height:280px;
+  padding:30px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  transition:.2s ease;
+}
+.insight-card.featured{grid-column:span 6;background:linear-gradient(135deg,var(--panel),#141421)}
 .insight-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.insight-card.featured{background:linear-gradient(135deg,var(--panel),#141421)}
 .insight-top{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.13em;color:var(--accent)}
 .insight-card h3{font-size:26px;line-height:1.12;letter-spacing:-.04em;margin:58px 0 12px;max-width:650px}
 .insight-card p{color:var(--muted);font-size:13px;max-width:650px;margin:0}
 .read-link{margin-top:auto;padding-top:25px;font-size:11px;font-weight:700;color:var(--accent-soft)}
 .insights-cta{margin-top:24px}
-@media(max-width:560px){.insight-card{min-height:240px;padding:24px}.insight-card h3{font-size:23px;margin-top:42px}}
 
+/* Bootstrap is used for the site shell/components; these editorial content grids intentionally use CSS Grid so their geometry stays deterministic. */
+.focus-grid{
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:1px;
+  background:var(--line);
+}
+.focus-grid > .col{
+  width:auto !important;
+  flex:none !important;
+  min-width:0;
+  background:var(--panel);
+  padding:28px;
+  min-height:255px;
+}
 
+/* Selected Work uses full-width editorial rows rather than the old index column. */
+.project{display:block;padding:42px 0}
+.project > div{min-width:0;max-width:900px}
+.project h3{max-width:760px}
 
-
-/* Bootstrap layout integration: Bootstrap owns the responsive grid; custom CSS owns the visual language. */
-.focus-grid{display:flex;background:var(--line);}
-.focus-grid > .col{background:var(--panel);padding:28px;min-height:255px;min-width:0;}
-.insights-grid > .insight-card{margin:0;}
+@media(max-width:1000px){
+  .focus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .insight-card,.insight-card.featured{grid-column:span 6}
+}
 @media(max-width:560px){
-  .focus-grid > .col{min-height:auto;padding:25px;}
-}
-
-/* Final layout corrections: keep the editorial layouts independent from Bootstrap's flex row sizing. */
-.focus-grid {
-  display: grid !important;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--line);
-}
-.focus-grid > .col {
-  width: auto !important;
-  flex: none !important;
-  min-width: 0;
-  background: var(--panel);
-  padding: 28px;
-  min-height: 255px;
-}
-
-/* Selected Work contains one content block per project, so it should use the full content width. */
-.project {
-  display: block;
-  padding: 42px 0;
-}
-.project > div {
-  min-width: 0;
-  max-width: 900px;
-}
-.project h3 {
-  max-width: 760px;
-}
-
-@media (max-width: 1000px) {
-  .focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 560px) {
-  .focus-grid { grid-template-columns: 1fr; }
-  .focus-grid > .col { min-height: auto; padding: 25px; }
-  .project { padding: 32px 0; }
+  .focus-grid{grid-template-columns:1fr}
+  .focus-grid > .col{min-height:auto;padding:25px}
+  .insights-grid{grid-template-columns:1fr}
+  .insight-card,.insight-card.featured{grid-column:span 1;min-height:240px;padding:24px}
+  .insight-card h3{font-size:23px;margin-top:42px}
+  .project{padding:32px 0}
 }
