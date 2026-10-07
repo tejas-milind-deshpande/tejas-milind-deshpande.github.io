@@ -12,11 +12,12 @@ body.light{--bg:#f5f5f2;--panel:#ecece7;--panel2:#e3e3de;--text:#15171a;--muted:
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 .grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
-.site-header{height:78px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:auto;padding:0 28px;border-bottom:1px solid var(--line)}
+.site-header{height:78px;display:flex;align-items:center;justify-content:flex-start;max-width:var(--max);margin:auto;padding:0 28px;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:14px;letter-spacing:-.02em}
 .brand-mark{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);padding:6px 7px}
 .brand-name{color:var(--text)}
-nav{display:flex;gap:28px;font-size:12px;color:var(--muted)}
+.site-header .navbar-collapse{flex-grow:0;flex-basis:auto}
+.site-header nav{display:flex;align-items:center;gap:32px;margin-left:auto;margin-right:28px;font-size:12px;color:var(--muted)}
 nav a:hover{color:var(--text)}
 .theme-toggle{border:1px solid var(--line);background:transparent;color:var(--muted);width:35px;height:35px;border-radius:50%;cursor:pointer}
 .hero{max-width:var(--max);margin:auto;min-height:760px;padding:90px 28px;display:grid;grid-template-columns:1.18fr .82fr;gap:75px;align-items:center}
@@ -80,7 +81,7 @@ footer{border-top:1px solid var(--line);max-width:var(--max);margin:auto;padding
   .contact-links{align-items:flex-start}
 }
 @media(max-width:560px){
-  .site-header{padding:0 18px}.brand-name{display:none}nav{display:none}
+  .site-header{padding:0 18px}.brand-name{display:none}.site-header nav{display:none;margin:0}
   .hero,.section,.contact{padding-left:18px;padding-right:18px}
   .hero{padding-top:62px;padding-bottom:65px}
   h1{font-size:49px}.lede{font-size:16px}
@@ -113,4 +114,43 @@ footer{border-top:1px solid var(--line);max-width:var(--max);margin:auto;padding
 .insights-grid > .insight-card{margin:0;}
 @media(max-width:560px){
   .focus-grid > .col{min-height:auto;padding:25px;}
+}
+
+/* Final layout corrections: keep the editorial layouts independent from Bootstrap's flex row sizing. */
+.focus-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+.focus-grid > .col {
+  width: auto !important;
+  flex: none !important;
+  min-width: 0;
+  background: var(--panel);
+  padding: 28px;
+  min-height: 255px;
+}
+
+/* Selected Work contains one content block per project, so it should use the full content width. */
+.project {
+  display: block;
+  padding: 42px 0;
+}
+.project > div {
+  min-width: 0;
+  max-width: 900px;
+}
+.project h3 {
+  max-width: 760px;
+}
+
+@media (max-width: 1000px) {
+  .focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .focus-grid { grid-template-columns: 1fr; }
+  .focus-grid > .col { min-height: auto; padding: 25px; }
+  .project { padding: 32px 0; }
 }
