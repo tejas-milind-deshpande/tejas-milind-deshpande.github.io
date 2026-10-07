@@ -9,17 +9,19 @@
   <meta property="og:description" content="Engineering leadership at the intersection of AI, architecture, cloud and distributed systems.">
   <meta property="og:url" content="https://tejas-milind-deshpande.github.io/">
   <title>Tejas Milind Deshpande — Engineering Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <header class="site-header navbar navbar-expand-lg">
     <a class="brand" href="#top" aria-label="Tejas Milind Deshpande home">
       <span class="brand-mark">TD</span>
       <span class="brand-name">Tejas Milind Deshpande</span>
     </a>
-    <nav aria-label="Primary navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavigation" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <nav class="collapse navbar-collapse" id="primaryNavigation" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#career">Career</a>
@@ -30,7 +32,7 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero container-fluid">
       <div class="hero-copy">
         <p class="eyebrow">ENGINEERING MANAGER · AI · ARCHITECTURE</p>
         <h1>Building teams,<br><span>systems</span> &amp; AI-enabled products.</h1>
@@ -52,7 +54,7 @@
       </div>
     </section>
 
-    <section class="intro-strip">
+    <section class="intro-strip container-fluid">
       <span>12+ YEARS</span>
       <span>SOFTWARE · PLATFORMS · CPaaS</span>
       <span>AI · CLOUD · DISTRIBUTED SYSTEMS</span>
@@ -60,32 +62,33 @@
     </section>
 
     <section id="about" class="section">
-      <div class="section-label">01 / ABOUT</div>
-      <div class="two-col">
+      <div class="container-fluid">
+      <div class="section-label">ABOUT</div>
+      <div class="two-col row g-5">
         <h2>The interesting problems are rarely just technical.</h2>
         <div class="copy">
           <p>I'm interested in the harder engineering problems: deciding what to build, understanding trade-offs, creating ownership, and helping teams execute consistently.</p>
           <p>My current focus spans <strong>AI Engineering, system design, distributed systems, cloud architecture, data platforms</strong> and engineering leadership.</p>
         </div>
       </div>
+      </div>
     </section>
 
     <section id="work" class="section section-dark">
-      <div class="section-label">02 / WHAT I WORK ON</div>
-      <div class="focus-grid">
-        <article><span>01</span><h3>AI Engineering</h3><p>LLMs, RAG, embeddings, vector search and AI-assisted engineering.</p></article>
-        <article><span>02</span><h3>Architecture</h3><p>System design, distributed systems and event-driven architecture.</p></article>
-        <article><span>03</span><h3>Cloud &amp; Platform</h3><p>AWS, Kubernetes, GitOps, CI/CD and observability.</p></article>
-        <article><span>04</span><h3>Data Platforms</h3><p>Kafka, Debezium, Snowflake, ClickHouse and Redis.</p></article>
-        <article><span>05</span><h3>Leadership</h3><p>Team building, technical strategy, ownership and execution.</p></article>
+      <div class="section-label">WHAT I WORK ON</div>
+      <div class="focus-grid row g-0">
+        <article><h3>AI Engineering</h3><p>LLMs, RAG, embeddings, vector search and AI-assisted engineering.</p></article>
+        <article><h3>Architecture</h3><p>System design, distributed systems and event-driven architecture.</p></article>
+        <article><h3>Cloud &amp; Platform</h3><p>AWS, Kubernetes, GitOps, CI/CD and observability.</p></article>
+        <article><h3>Data Platforms</h3><p>Kafka, Debezium, Snowflake, ClickHouse and Redis.</p></article>
+        <article><h3>Leadership</h3><p>Team building, technical strategy, ownership and execution.</p></article>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-label">03 / SELECTED WORK</div>
-      <div class="project-list">
+      <div class="section-label">SELECTED WORK</div>
+      <div class="project-list container-fluid">
         <article class="project">
-          <div class="project-index">01</div>
           <div>
             <h3>AI Test Case Generator</h3>
             <p>RAG-based AI system for generating test cases from existing product and testing knowledge.</p>
@@ -93,7 +96,6 @@
           </div>
         </article>
         <article class="project">
-          <div class="project-index">02</div>
           <div>
             <h3>System Design Notes</h3>
             <p>Practical notes and experiments around system design, distributed systems, scalability and architecture trade-offs.</p>
@@ -101,7 +103,6 @@
           </div>
         </article>
         <article class="project">
-          <div class="project-index">03</div>
           <div>
             <h3>Cloud &amp; Platform Engineering</h3>
             <p>Exploring modern engineering platforms using AWS, Kubernetes, GitOps, observability and CI/CD.</p>
@@ -112,7 +113,7 @@
     </section>
 
     <section id="career" class="section section-dark">
-      <div class="section-label">04 / CAREER</div>
+      <div class="section-label">CAREER</div>
       <div class="timeline">
         <article><div class="year">2025 — NOW</div><div><h3>Engineering Manager · Madison Logic</h3><p>Leading engineering across backend, frontend, QA and platform initiatives with a focus on technical ownership, modernization, AI adoption and engineering execution.</p></div></article>
         <article><div class="year">2013 — 2025</div><div><h3>Gupshup</h3><p>Progressed through customer support, technical support, solutions engineering and technical leadership roles in the CPaaS domain.</p></div></article>
@@ -120,8 +121,8 @@
     </section>
 
     <section class="section">
-      <div class="section-label">05 / TECHNOLOGY</div>
-      <div class="tech-grid">
+      <div class="section-label">TECHNOLOGY</div>
+      <div class="tech-grid row g-0">
         <div><h3>Languages</h3><p>PHP · Java · Shell · Python</p></div>
         <div><h3>Cloud &amp; Infrastructure</h3><p>AWS · Kubernetes · Docker · ArgoCD</p></div>
         <div><h3>Data &amp; Streaming</h3><p>Kafka · Debezium · Snowflake · Redis</p></div>
@@ -131,15 +132,15 @@
     </section>
 
     <section class="section quote-section">
-      <div class="section-label">06 / HOW I THINK</div>
+      <div class="section-label">HOW I THINK</div>
       <blockquote>“Technology is rarely the hardest part of engineering.”</blockquote>
       <p>The harder problems are deciding what to build, understanding trade-offs, creating ownership, and helping teams execute consistently.</p>
     </section>
 
 
     <section id="insights" class="section">
-      <div class="section-label">07 / INSIGHTS</div>
-      <div class="insights-grid">
+      <div class="section-label">INSIGHTS</div>
+      <div class="insights-grid row g-4">
         <a class="insight-card featured" href="https://www.linkedin.com/pulse/why-i-retired-tell-me-yourself-interview-question-tejas-deshpande-niuic/" target="_blank" rel="noopener noreferrer">
           <div class="insight-top"><span>LINKEDIN ARTICLE</span><span>↗</span></div>
           <h3>Why I Retired the “Tell Me About Yourself” Interview Question</h3>
@@ -242,5 +243,6 @@
     <span>© <span id="year"></span></span>
   </footer>
   <script src="assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
